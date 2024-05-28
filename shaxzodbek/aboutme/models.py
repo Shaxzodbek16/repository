@@ -14,3 +14,4 @@ class Information(models.Model):
 
     class Meta:
         db_table = 'Information'
+
