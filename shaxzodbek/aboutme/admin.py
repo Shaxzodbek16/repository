@@ -4,7 +4,8 @@ from .models import Information
 
 @admin.register(Information)
 class InformationAdmin(admin.ModelAdmin):
-    list_display = ('title',)
-    search_fields = ('title',)
-    list_filter = ('title',)
+    list_display = ('title', 'category')
+    search_fields = ('title', 'category')
+    list_filter = ('title', 'category')
+
     

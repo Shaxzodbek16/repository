@@ -7,6 +7,30 @@ def mainpage(request):
 
 
 def all_info(request):
-    contest = {
-        "information": Information.objects.all(),
-    }
+    pass
+    # return all information about me
+
+
+def aboutme(request):
+    pass
+    # return only mine info from catagory filter
+
+
+def love(request):
+    pass
+    # return only love info from catagory filter
+
+
+def friends(request):
+    pass
+    # return only friends info from catagory filter
+
+
+def family(request):
+    pass
+    # return only family info from catagory filter
+
+
+def projects(request):
+    pass
+    # return only projects info from catagory filter
