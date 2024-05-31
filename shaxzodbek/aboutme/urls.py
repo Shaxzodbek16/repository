@@ -10,4 +10,5 @@ urlpatterns = [
     path("friends", friends, name='friends'),
     path("family", family, name='family'),
     path("projects", projects, name='projects'),
+    path("wish", wish, name='wish'),
 ]

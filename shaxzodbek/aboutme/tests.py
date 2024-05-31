@@ -1,8 +1,18 @@
 from django.test import TestCase
-from .models import Information
+from .models import Information, People, Wish
 
 
-class AboutMeTest(TestCase):
+class InformationTestCase(TestCase):
+    def setUp(self):
+        pass
+
+
+class PeopleTestCase(TestCase):
+    def setUp(self):
+        pass
+
+
+class WishTestCase(TestCase):
     def setUp(self):
         pass
 

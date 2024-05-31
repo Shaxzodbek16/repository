@@ -34,3 +34,8 @@ def family(request):
 def projects(request):
     pass
     # return only projects info from catagory filter
+
+
+def wish(request):
+    pass
+    # return only wishes info from catagory filter
