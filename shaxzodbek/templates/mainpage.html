@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>Mainpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mainpage.css'%}">
+    <title>{{title}}</title>
 </head>
 <body>
-
+    <div>
+        <div>
+            <img src="{% static 'images/static_images/shaxzodbek.jpg'%}" alt="Shaxzodbek's image">
+        </div>
+        <div>
+            <a href="{% url 'aboutme' %}">About me</a>
+            <a href="{% url 'all-info' %}">All info</a>
+        </div>
+    </div>
 </body>
 </html>

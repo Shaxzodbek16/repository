@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Information
+from .models import Information, Wish
 
 
 def mainpage(request):
@@ -7,38 +7,80 @@ def mainpage(request):
 
 
 def all_info(request):
-    pass
-    # return all information about me
+    info = Information.objects.all().order_by('-date_created')
+    context = {
+        'info': info,
+        'html_name': 'all_info.html',
+        'css_name': 'all_info.css',
+        'title': 'All information'
+    }
+    return render(request, 'index.html', context=context)
 
 
 def aboutme(request):
-    pass
-    # return only mine info from catagory filter
+    info = Information.objects.filter(category="aboutme").order_by('-date_created')
+    context = {
+        'info': info,
+        'html_name': 'all_info.html',
+        'css_name': 'aboutme.css',
+        'title': 'About me'
+    }
+    return render(request, 'index.html', context=context)
 
 
 def love(request):
-    pass
-    # return only love.html info from catagory filter
+    info = Information.objects.filter(category="love").order_by('-date_created')
+    context = {
+        'info': info,
+        'html_name': 'all_info.html',
+        'css_name': 'love.css',
+        'title': 'About love'
+    }
+    return render(request, 'index.html', context=context)
 
 
 def friends(request):
-    pass
-    # return only friends info from catagory filter
+    info = Information.objects.filter(category="friends").order_by('-date_created')
+    context = {
+        'info': info,
+        'html_name': 'all_info.html',
+        'css_name': 'friends.css',
+        'title': 'About friends'
+    }
+    return render(request, 'index.html', context=context)
 
 
 def family(request):
-    pass
-    # return only family info from catagory filter
+    info = Information.objects.filter(category="family").order_by('-date_created')
+    context = {
+        'info': info,
+        'html_name': 'all_info.html',
+        'css_name': 'family.css',
+        'title': 'About family'
+    }
+    return render(request, 'index.html', context=context)
 
 
 def projects(request):
-    pass
-    # return only projects.html info from catagory filter
+    info = Information.objects.filter(category="projects").order_by('-date_created')
+    context = {
+        'info': info,
+        'html_name': 'all_info.html',
+        'css_name': 'projects.css',
+        'title': 'About projects'
+    }
+    return render(request, 'index.html', context=context)
 
 
 def wish(request):
-    pass
-    # return only wishes info from catagory filter
+    info = Wish.objects.all().order_by('-date_created')
+    context = {
+        'info': info,
+        'html_name': 'wish.html',
+        'css_name': 'wish.css',
+        'title': 'About wish'
+    }
+    return render(request, 'index.html', context=context)
 
 
 def _404(request):
