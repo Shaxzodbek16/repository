@@ -1,9 +1,9 @@
 catagory_options: list[tuple] = [
     ("all", "all"),
     ("aboutme", "aboutme"),
-    ("love", "love"),
+    ("love.html", "love.html"),
     ("friends", "friends"),
     ("family", 'family'),
-    ("projects", "projects"),
+    ("projects.html", "projects.html"),
     ("wish", "wish")
 ]

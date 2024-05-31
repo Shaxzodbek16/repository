@@ -18,7 +18,7 @@ def aboutme(request):
 
 def love(request):
     pass
-    # return only love info from catagory filter
+    # return only love.html info from catagory filter
 
 
 def friends(request):
@@ -33,9 +33,13 @@ def family(request):
 
 def projects(request):
     pass
-    # return only projects info from catagory filter
+    # return only projects.html info from catagory filter
 
 
 def wish(request):
     pass
     # return only wishes info from catagory filter
+
+
+def _404(request):
+    return render(request, '404.html.html', status=404)
