@@ -40,7 +40,7 @@ class Information(models.Model):
     image = models.ImageField(upload_to="images/information_images")
     category = models.CharField(max_length=50, choices=catagory_options)
     date_created = models.DateTimeField(auto_now_add=True)
-    connection = models.ManyToManyField(People)
+    connection = models.ManyToManyField(People, blank=True)
     wishes = models.ManyToManyField(Wish, blank=True)
 
     def __str__(self):

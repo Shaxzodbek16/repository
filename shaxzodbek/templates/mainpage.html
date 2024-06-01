@@ -5,17 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/mainpage.css'%}">
+    <link rel="shortcut icon" href="{% static 'images/logoes/main_icon.jpeg'%}" type="image/x-icon">
     <title>{{title}}</title>
 </head>
 <body>
-    <div>
-        <div>
+    <nav>
+        <h1>Shaxzodbek's Blog</h1>
+    </nav>
+    <div class="main">
+        <div class="my-img">
             <img src="{% static 'images/static_images/shaxzodbek.jpg'%}" alt="Shaxzodbek's image">
         </div>
-        <div>
-            <a href="{% url 'aboutme' %}">About me</a>
-            <a href="{% url 'all-info' %}">All info</a>
+        <div class="links">
+            <h1>Shaxzodbek Muxtorov</h1>
+            <p>Software engineer</p>
+            <a class="f-link" href="{% url 'aboutme' %}">About me</a>
+            <a class="s-link" href="{% url 'all-info' %}">All info</a>
+            <div class="socials">
+                <a href="" target="_blank"><img class="icon" src="{% static 'images/icons/telegram.png'%}" alt="telegram"></a>
+                <a href="" target="_blank"><img class="icon" src="{% static 'images/icons/facebook.png'%}" alt="facebook"></a>
+                <a href="" target="_blank"><img class="icon" src="{% static 'images/icons/github.png'%}" alt="github"></a>
+                <a href="" target="_blank"><img class="icon" src="{% static 'images/icons/instagram.png'%}" alt="instagram"></a>
+                <a href="" target="_blank"><img class="icon" src="{% static 'images/icons/linkedin.png'%}" alt="linkedin"></a>
+                <a href="" target="_blank"><img class="icon" src="{% static 'images/icons/youtube.png'%}" alt="youtube"></a>
+            </div>
         </div>
     </div>
+    <footer>
+        <p>Shaxzodbek's Blog</p>
+    </footer>
 </body>
 </html>
