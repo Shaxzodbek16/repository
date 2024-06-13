@@ -1,0 +1,36 @@
+/* General Styling */
+body {
+    background: #2075c6;
+    font-family: sans-serif; 
+    line-height: 1.6;
+    margin: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    color: #333; /* Dark gray */
+}
+
+/* Article Formatting */
+article {
+    max-width: 800px; 
+    margin: 0 auto; /* Center the content */
+}
+
+h2 {
+    margin-top: 2rem; /* Space between sections */
+}
+
+p {
+    margin-bottom: 1rem; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+}

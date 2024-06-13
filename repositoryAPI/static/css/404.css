@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    background-color: #222; /* Dark background */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 8rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #f0ad4e; /* Orange button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.astronaut {
+    position: relative; /* For positioning the astronaut */
+}
+
+.astronaut img {
+    width: 200px; /* Adjust size as needed */
+}
