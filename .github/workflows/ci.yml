@@ -31,11 +31,13 @@ jobs:
 
       - name: Install Dependencies
         run: pip install -r requirements.txt
-      - name: Check directory
-        run: cd repositoryAPI/
+
       - name: Run Migrations
+        working-directory: repositoryAPI
         run: python manage.py migrate
+
       - name: Run Tests
+        working-directory: repositoryAPI
         run: python manage.py test
         env:
-          DATABASE_URL: postgresql://postgres:password@localhost:5432/postgres
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
