@@ -11,6 +11,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      DJANGO_SETTINGS_MODULE: "repositoryAPI.settings"
     services:
       postgres:
         image: postgres:16.3
