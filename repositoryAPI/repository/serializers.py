@@ -1,11 +1,12 @@
 import base64
-
-from django.core.files.base import ContentFile
+# from typing import
 from rest_framework import serializers
 from .models import Person, Wish, Shaxzodbek, YouTube
 
 
 class PersonSerializer(serializers.ModelSerializer):
+	photo = serializers.SerializerMethodField()
+
 	def get_photo(self, obj):
 		if obj.photo:
 			with open(obj.photo.path, 'rb') as image_file:
