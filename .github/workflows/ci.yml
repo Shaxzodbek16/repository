@@ -31,10 +31,10 @@ jobs:
 
       - name: Install Dependencies
         run: pip install -r requirements.txt
-
+      - name: Check directory
+        run: cd repositoryAPI/
       - name: Run Migrations
         run: python manage.py migrate
-
       - name: Run Tests
         run: python manage.py test
         env:
