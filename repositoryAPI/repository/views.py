@@ -19,7 +19,7 @@ def _404(request):
 
 class ShaxzodbekApiView(APIView):
 	permission_classes = [permissions.AllowAny]
-	filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+	filter_backends = [filters.SearchFilter, filters.OrderingFilter, DjangoFilterBackend]
 	ordering_fields = ['-category']
 	search_fields = ['category']
 
