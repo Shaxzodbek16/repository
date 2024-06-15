@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
-from .models import Person, Wish, Shaxzodbek, YouTube
-from .serializers import YouTubeSerializer
+from ..models import YouTube
+from ..serializers import YouTubeSerializer
 
 
 class TestYoTube(TestCase):

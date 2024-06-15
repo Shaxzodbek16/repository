@@ -41,6 +41,9 @@ jobs:
         run: python manage.py test
       - name: Run Tests
         working-directory: repositoryAPI
-        run: pytest
+        run: | 
+          cd repository
+          export DJANGO_SETTINGS_MODULE=repositoryAPI.settings
+          pytest
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
