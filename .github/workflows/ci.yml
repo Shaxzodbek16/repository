@@ -43,7 +43,6 @@ jobs:
         working-directory: repositoryAPI
         run: | 
           export DJANGO_SETTINGS_MODULE=repositoryAPI.settings
-          filterwarnings = ignore:pkg_resources is deprecated:DeprecationWarning
           pytest
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
