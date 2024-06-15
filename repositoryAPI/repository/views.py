@@ -185,6 +185,10 @@ class YouTubeApiView(APIView):
 	def put(self, request, pk=None):
 		try:
 			category = YouTube.objects.get(pk=pk)
+			serializer = YouTubeSerializer(category, data=request.data, partial=True)
+			if serializer.is_valid():
+				serializer.save()
+				return Response(serializer.data)
 		except YouTube.DoesNotExist:
 			return Response({"error": "YouTube not found"}, status=status.HTTP_404_NOT_FOUND)
 
