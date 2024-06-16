@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import terms, ShaxzodbekApiView, PersonApiView, YouTubeApiView, WishApiView
+from .views import terms, ShaxzodbekApiView, PersonApiView, YouTubeApiView, WishApiView, GameApiView
 
 urlpatterns = [
 
@@ -12,6 +12,8 @@ urlpatterns = [
 	path('wish/<int:pk>', WishApiView.as_view(), name='wish-pk'),
 	path("youtube/", YouTubeApiView.as_view(), name="youtube"),
 	path("youtube/<int:pk>", YouTubeApiView.as_view(), name="youtube-pk"),
+	path("game/", GameApiView.as_view(), name="game"),
+	path("game/<int:pk>", GameApiView.as_view(), name="game-pk"),
 
 	# with templates
 	path("terms/", terms, name="terms"),
