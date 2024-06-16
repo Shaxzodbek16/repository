@@ -6,6 +6,8 @@ from drf_yasg import openapi
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.shortcuts import render
+
 schema_view = get_schema_view(
     openapi.Info(
         title="Shaxzodbek's Repository API",
@@ -20,7 +22,11 @@ schema_view = get_schema_view(
 )
 
 
+def index(request): return render(request, 'index.html')
+
+
 urlpatterns = [
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
     path('api/', include('repository.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
