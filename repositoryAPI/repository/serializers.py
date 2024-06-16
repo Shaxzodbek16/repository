@@ -1,7 +1,19 @@
 import base64
-# from typing import
 from rest_framework import serializers
-from .models import Person, Wish, Shaxzodbek, YouTube
+from .models import Person, Wish, Shaxzodbek, YouTube, Game
+
+
+class GameSerializer(serializers.ModelSerializer):
+	photo = serializers.SerializerMethodField()
+
+	def get_photo(self, obj):
+		if obj.photo:
+			with open(obj.photo.path, 'rb') as image_file:
+				return base64.b64encode(image_file.read()).decode('utf-8')  # Encode to base64
+		return None
+	class Meta:
+		model = Game
+		fields = '__all__'
 
 
 class PersonSerializer(serializers.ModelSerializer):
@@ -12,6 +24,7 @@ class PersonSerializer(serializers.ModelSerializer):
 			with open(obj.photo.path, 'rb') as image_file:
 				return base64.b64encode(image_file.read()).decode('utf-8')  # Encode to base64
 		return None
+	game = GameSerializer(many=True, read_only=True)
 
 	class Meta:
 		model = Person
@@ -52,3 +65,5 @@ class YouTubeSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = YouTube
 		fields = '__all__'
+
+
