@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from django.contrib import admin
-from .models import Person, Wish, Shaxzodbek, YouTube
+from .models import Person, Wish, Shaxzodbek, YouTube, Game
 
 
 @admin.register(Person)
@@ -30,3 +30,10 @@ class YouTubeAdmin(admin.ModelAdmin):
 	list_display = ('title', 'description', 'link')
 	search_fields = ('title', )
 	list_filter = ('title', 'created_at')
+
+
+@admin.register(Game)
+class GameAdmin(admin.ModelAdmin):
+	list_display = ('name', 'description', 'created_at')
+	search_fields = ('name', )
+	list_filter = ('name', 'created_at')
