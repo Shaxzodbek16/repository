@@ -43,6 +43,6 @@ jobs:
         working-directory: repositoryAPI
         run: |
           export DJANGO_SETTINGS_MODULE=repositoryAPI.settings
-          pytest
+          python manage.py test
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
