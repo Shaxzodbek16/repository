@@ -4,27 +4,21 @@ from .models import Person, Wish, Shaxzodbek, YouTube, Game
 
 
 class GameSerializer(serializers.ModelSerializer):
-	photo = serializers.SerializerMethodField()
+	photo_url = serializers.SerializerMethodField()
 
-	def get_photo(self, obj):
-		if obj.photo:
-			with open(obj.photo.path, 'rb') as image_file:
-				return base64.b64encode(image_file.read()).decode('utf-8')  # Encode to base64
-		return None
+	def get_photo_url(self, obj):
+		return f"http://localhost:8000{obj.photo.url}"
+
 	class Meta:
 		model = Game
 		fields = '__all__'
 
 
 class PersonSerializer(serializers.ModelSerializer):
-	photo = serializers.SerializerMethodField()
+	photo_url = serializers.SerializerMethodField()
 
-	def get_photo(self, obj):
-		if obj.photo:
-			with open(obj.photo.path, 'rb') as image_file:
-				return base64.b64encode(image_file.read()).decode('utf-8')  # Encode to base64
-		return None
-	game = GameSerializer(many=True, read_only=True)
+	def get_photo_url(self, obj):
+		return f"http://localhost:8000{obj.photo.url}"
 
 	class Meta:
 		model = Person
@@ -32,13 +26,10 @@ class PersonSerializer(serializers.ModelSerializer):
 
 
 class WishSerializer(serializers.ModelSerializer):
-	photo = serializers.SerializerMethodField()
+	photo_url = serializers.SerializerMethodField()
 
-	def get_photo(self, obj):
-		if obj.photo:
-			with open(obj.photo.path, 'rb') as image_file:
-				return base64.b64encode(image_file.read()).decode('utf-8')  # Encode to base64
-		return None
+	def get_photo_url(self, obj):
+		return f"http://localhost:8000{obj.photo.url}"
 
 	class Meta:
 		model = Wish
@@ -46,13 +37,11 @@ class WishSerializer(serializers.ModelSerializer):
 
 
 class ShaxzodbekSerializer(serializers.ModelSerializer):
-	photo = serializers.SerializerMethodField()
 
-	def get_photo(self, obj):
-		if obj.photo:
-			with open(obj.photo.path, 'rb') as image_file:
-				return base64.b64encode(image_file.read()).decode('utf-8')  # Encode to base64
-		return None
+	photo_url = serializers.SerializerMethodField()
+	def get_photo_url(self, obj):
+		return f"http://localhost:8000{obj.photo.url}"
+
 	people = PersonSerializer(many=True)
 	wish = WishSerializer()
 
@@ -65,5 +54,3 @@ class YouTubeSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = YouTube
 		fields = '__all__'
-
-

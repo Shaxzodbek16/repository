@@ -18,7 +18,8 @@
         <h1>404</h1>
         <h2>Oops! The page you're looking for isn't here.</h2>
         <p>It might have been moved or deleted.</p>
-        <a href="/" class="button">Back to Home</a>
+        <a href="{% url 'index' %}" class="button">Back to Home</a>
+        <a href="{% url 'terms' %}" class="button">Terms</a>
         <div class="astronaut">
             <img src="{% static 'images/astronaut.png' %}" alt="Lost Astronaut">
         </div>
