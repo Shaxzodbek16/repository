@@ -1,6 +1,12 @@
+import pytest
+import os
+import django
 from django.test import TestCase, Client
-from ..models import YouTube
-from ..serializers import YouTubeSerializer
+from .models import YouTube
+from .serializers import YouTubeSerializer
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'repositoryAPI.settings')
+django.setup()
 
 
 class TestYouTubeModelAndSerializer(TestCase):
@@ -32,7 +38,8 @@ class TestYouTubeModelAndSerializer(TestCase):
 
     def test_put_youtube(self):
         update_data = {'title': 'updated youtube title'}
-        response = self.client.put(f"/api/youtube/{self.youtube1_data['id']}/", update_data, content_type="application/json")
+        response = self.client.put(f"/api/youtube/{self.youtube1_data['id']}/", update_data,
+                                   content_type="application/json")
         self.assertEqual(response.status_code, 404)
 
     def test_delete_youtube(self):

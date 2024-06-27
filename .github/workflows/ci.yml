@@ -1,4 +1,4 @@
-name: Django CI with PostgreSQL
+name: Django CI with PostgresSQL
 
 on:
   push:
@@ -42,7 +42,6 @@ jobs:
       - name: Run Tests
         working-directory: repositoryAPI
         run: |
-          export DJANGO_SETTINGS_MODULE=repositoryAPI.settings
-          python manage.py test
+          python manage.py test --keepdb
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
