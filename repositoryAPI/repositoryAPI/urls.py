@@ -12,9 +12,9 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Shaxzodbek's Repository API",
         default_version='v1',
-        description="",
-        terms_of_service="https://shaxzodbek.com/terms/",
-        contact=openapi.Contact(email="muxtorovshaxzodbek.com"),
+        description="It is my repository, You must not use it without asking me.",
+        terms_of_service="https://api.shaxzodbek.com/terms/",
+        contact=openapi.Contact(email="muxtorovshaxzodbek16@gmail.com"),
         license=openapi.License(name="MIT License"),
     ),
     public=False,
