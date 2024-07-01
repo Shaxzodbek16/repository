@@ -9,8 +9,8 @@
 <body>
 
 <header>
+    <h1 style="text-align: center">Terms of Service</h1>
     <a href="{% url 'index' %}">Back to Home</a>
-    <h1>Terms of Service</h1>
 </header>
 
 <main>
@@ -21,11 +21,11 @@
 
         <h2>API lar</h2>
         <p>
-            path('shaxzodbek/', ShaxzodbekApiView.as_view(), name='shaxzodbek'),
-            path('person/', PersonApiView.as_view(), name='person'),
-            path('wish/', WishApiView.as_view(), name='wish'),
-            path("youtube/", YouTubeApiView.as_view(), name="youtube"),
-            path("game/", GameApiView.as_view(), name="game"),
+            path('shaxzodbek/', ShaxzodbekApiView.as_view(), name='shaxzodbek'), <br>
+            path('person/', PersonApiView.as_view(), name='person'),<br>
+            path('wish/', WishApiView.as_view(), name='wish'),<br>
+            path("youtube/", YouTubeApiView.as_view(), name="youtube"),<br>
+            path("game/", GameApiView.as_view(), name="game"),<br>
             path("terms/", terms, name="terms") <br> With int:pk
         </p>
     </article>
