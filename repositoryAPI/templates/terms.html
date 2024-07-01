@@ -8,25 +8,32 @@
 </head>
 <body>
 
-    <header>
-        <a href="{% url 'index' %}">Back to Home</a>
-        <h1>Terms of Service</h1>
-    </header>
+<header>
+    <a href="{% url 'index' %}">Back to Home</a>
+    <h1>Terms of Service</h1>
+</header>
 
-    <main>
-        <article>
-            <h2>Introduction</h2>
-            <p>...</p>
+<main>
+    <article>
+        <h2>API haqida</h2>
+        <p>Bu API faqat men(Muxtorov Shaxzodbek (AD0600562)) uchun ishlab chiqilgan bo'lib, mening ruxsatimsiz
+            foydalanish qat'iyan man etiladi.</p>
 
-            <h2>Acceptance of Terms</h2>
-            <p>...</p>
+        <h2>API lar</h2>
+        <p>
+            path('shaxzodbek/', ShaxzodbekApiView.as_view(), name='shaxzodbek'),
+            path('person/', PersonApiView.as_view(), name='person'),
+            path('wish/', WishApiView.as_view(), name='wish'),
+            path("youtube/", YouTubeApiView.as_view(), name="youtube"),
+            path("game/", GameApiView.as_view(), name="game"),
+            path("terms/", terms, name="terms") <br> With int:pk
+        </p>
+    </article>
+</main>
 
-            </article>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2024 Shaxzodbek. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
